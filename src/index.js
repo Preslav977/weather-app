@@ -197,6 +197,85 @@ function processFullWeekWeather(weatherData) {
   return forecastWeatherObj;
 }
 
+async function displayForecastWeatherLocation() {
+  const getIpData = await fetchUserLocationIP();
+  const weatherData = await retrieveWeatherLocationCity(getIpData.city);
+  forecastWeatherObj = {
+    mondayMorningTempC: weatherData.forecast.forecastday[0].day.mintemp_c,
+    mondayAfternoonTempC: weatherData.forecast.forecastday[0].day.maxtemp_c,
+    mondayMorningTempF: weatherData.forecast.forecastday[0].day.mintemp_f,
+    mondayAfternoonTempF: weatherData.forecast.forecastday[0].day.maxtemp_f,
+    mondayWeatherIcon: weatherData.forecast.forecastday[0].day.condition.icon,
+
+    tuesdayMorningTempC: weatherData.forecast.forecastday[1].day.mintemp_c,
+    tuesdayAfternoonTempC: weatherData.forecast.forecastday[1].day.maxtemp_c,
+    tuesdayMorningTempF: weatherData.forecast.forecastday[1].day.mintemp_f,
+    tuesdayAfternoonTempF: weatherData.forecast.forecastday[1].day.maxtemp_f,
+    tuesdayWeatherIcon: weatherData.forecast.forecastday[1].day.condition.icon,
+
+    wednesdayMorningTempC: weatherData.forecast.forecastday[2].day.mintemp_c,
+    wednesdayAfternoonTempC: weatherData.forecast.forecastday[2].day.maxtemp_c,
+    wednesdayMorningTempF: weatherData.forecast.forecastday[2].day.mintemp_f,
+    wednesdayAfternoonTempF: weatherData.forecast.forecastday[2].day.maxtemp_f,
+    wednesdayWeatherIcon:
+      weatherData.forecast.forecastday[2].day.condition.icon,
+
+    thursdayMorningTempC: weatherData.forecast.forecastday[3].day.mintemp_c,
+    thursdayAfternoonTempC: weatherData.forecast.forecastday[3].day.maxtemp_c,
+    thursdayMorningTempF: weatherData.forecast.forecastday[3].day.mintemp_f,
+    thursdayAfternoonTempF: weatherData.forecast.forecastday[3].day.maxtemp_f,
+    thursdayWeatherIcon: weatherData.forecast.forecastday[3].day.condition.icon,
+
+    fridayMorningTempC: weatherData.forecast.forecastday[4].day.mintemp_c,
+    fridayAfternoonTempC: weatherData.forecast.forecastday[4].day.maxtemp_c,
+    fridayMorningTempF: weatherData.forecast.forecastday[4].day.mintemp_f,
+    fridayAfternoonTempF: weatherData.forecast.forecastday[4].day.maxtemp_f,
+    fridayWeatherIcon: weatherData.forecast.forecastday[4].day.condition.icon,
+
+    saturdayMorningTempC: weatherData.forecast.forecastday[5].day.mintemp_c,
+    saturdayAfternoonTempC: weatherData.forecast.forecastday[5].day.maxtemp_c,
+    saturdayMorningTempF: weatherData.forecast.forecastday[5].day.mintemp_f,
+    saturdayAfternoonTempF: weatherData.forecast.forecastday[5].day.maxtemp_f,
+    saturdayWeatherIcon: weatherData.forecast.forecastday[5].day.condition.icon,
+
+    sundayMorningTempC: weatherData.forecast.forecastday[6].day.mintemp_c,
+    sundayAfternoonTempC: weatherData.forecast.forecastday[6].day.maxtemp_c,
+    sundayMorningTempF: weatherData.forecast.forecastday[6].day.mintemp_f,
+    sundayAfternoonTempF: weatherData.forecast.forecastday[6].day.maxtemp_f,
+    sundayWeatherIcon: weatherData.forecast.forecastday[6].day.condition.icon,
+  };
+
+  mondayMorningTemp.textContent = `${forecastWeatherObj.mondayMorningTempC} C`;
+  mondayAfternoonTemp.textContent = `${forecastWeatherObj.mondayAfternoonTempC} C`;
+  mondayWeatherIcon.src = `${forecastWeatherObj.mondayWeatherIcon}`;
+
+  tuesdayMorningTemp.textContent = `${forecastWeatherObj.tuesdayMorningTempC} C`;
+  tuesdayAfternoonTemp.textContent = `${forecastWeatherObj.tuesdayAfternoonTempC} C`;
+  tuesdayWeatherIcon.src = `${forecastWeatherObj.tuesdayWeatherIcon}`;
+
+  wednesdayMorningTemp.textContent = `${forecastWeatherObj.wednesdayMorningTempC} C`;
+  wednesdayAfternoonTemp.textContent = `${forecastWeatherObj.wednesdayAfternoonTempC} C`;
+  wednesdayWeatherIcon.src = `${forecastWeatherObj.wednesdayWeatherIcon}`;
+
+  thursdayMorningTemp.textContent = `${forecastWeatherObj.thursdayMorningTempC} C`;
+  thursdayAfternoonTemp.textContent = `${forecastWeatherObj.thursdayAfternoonTempC} C`;
+  thursdayWeatherIcon.src = `${forecastWeatherObj.thursdayWeatherIcon}`;
+
+  fridayMorningTemp.textContent = `${forecastWeatherObj.fridayMorningTempC} C`;
+  fridayAfternoonTemp.textContent = `${forecastWeatherObj.fridayAfternoonTempC} C`;
+  fridayWeatherIcon.src = `${forecastWeatherObj.fridayWeatherIcon}`;
+
+  saturdayMorningTemp.textContent = `${forecastWeatherObj.saturdayMorningTempC} C`;
+  saturdayAfternoonTemp.textContent = `${forecastWeatherObj.saturdayAfternoonTempC} C`;
+  saturdayWeatherIcon.src = `${forecastWeatherObj.saturdayWeatherIcon}`;
+
+  sundayMorningTemp.textContent = `${forecastWeatherObj.sundayMorningTempC} C`;
+  sundayAfternoonTemp.textContent = `${forecastWeatherObj.sundayAfternoonTempC} C`;
+  sundayWeatherIcon.src = `${forecastWeatherObj.sundayWeatherIcon}`;
+}
+
+displayForecastWeatherLocation();
+
 function displayForecastWeather() {
   mondayMorningTemp.textContent = `${forecastWeatherObj.mondayMorningTempC} C`;
   mondayAfternoonTemp.textContent = `${forecastWeatherObj.mondayAfternoonTempC} C`;
