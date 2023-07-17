@@ -1,17 +1,21 @@
-function getLocationAPI() {
-  fetch(
-    "https://api.weatherapi.com/v1/current.json?key=e5de975d30ff49eeb9a70436231107&q=pleven",
-    { mode: "cors" }
-  )
-    .then((response) => response.json())
-    .then(processLocationAPI);
-}
+const userForm = document.querySelector(".user-form");
+const searchingLocation = document.getElementById("search-location");
 
-getLocationAPI();
-
-function processLocationAPI(weatherData) {
-  const weatherLocationData = weatherData.location;
-  console.log(weatherLocationData);
-  const currentWeatherLocationData = weatherData.current;
-  console.log(currentWeatherLocationData);
+async function fetchUserLocation() {
+  try {
+    const response = await fetch(
+      `https://api.weatherapi.com/v1/forecast.json?key=e5de975d30ff49eeb9a70436231107&q=${searchingLocation.value}&days=7`,
+      { mode: "cors" }
+    );
+    return await response.json();
+  } catch (error) {
+    console.log(error);
+  }
 }
+userForm.addEventListener("submit", async (e) => {
+  const weatherData = await fetchUserLocation();
+  console.log(weatherData);
+  e.preventDefault();
+  fetchUserLocation();
+  userForm.reset();
+});
