@@ -88,12 +88,78 @@ function displayCurrentWeather() {
   windSpeed.textContent = `${currentWeatherObj.windSpeed} km/h`;
 }
 
+let forecastWeatherObj = {};
+
+function processFullWeekWeather(weatherData) {
+  forecastWeatherObj = {
+    mondayMorningTempC: weatherData.forecast.forecastday[0].day.mintemp_c,
+    mondayAfternoonTempC: weatherData.forecast.forecastday[0].day.maxtemp_c,
+    mondayMorningTempF: weatherData.forecast.forecastday[0].day.mintemp_f,
+    mondayAfternoonTempF: weatherData.forecast.forecastday[0].day.maxtemp_f,
+    mondayWeatherCondition:
+      weatherData.forecast.forecastday[0].day.condition.text,
+    mondayWeatherIcon: weatherData.forecast.forecastday[0].day.condition.icon,
+
+    tuesdayMorningTempC: weatherData.forecast.forecastday[1].day.mintemp_c,
+    tuesdayAfternoonTempC: weatherData.forecast.forecastday[1].day.maxtemp_c,
+    tuesdayMorningTempF: weatherData.forecast.forecastday[1].day.mintemp_f,
+    tuesdayAfternoonTempF: weatherData.forecast.forecastday[1].day.maxtemp_f,
+    tuesdayWeatherCondition:
+      weatherData.forecast.forecastday[1].day.condition.text,
+    tuesdayWeatherIcon: weatherData.forecast.forecastday[1].day.condition.icon,
+
+    wednesdayMorningTempC: weatherData.forecast.forecastday[2].day.mintemp_c,
+    wednesdayAfternoonTempC: weatherData.forecast.forecastday[2].day.maxtemp_c,
+    wednesdayMorningTempF: weatherData.forecast.forecastday[2].day.mintemp_f,
+    wednesdayAfternoonTempF: weatherData.forecast.forecastday[2].day.maxtemp_f,
+    wednesdayWeatherCondition:
+      weatherData.forecast.forecastday[2].day.condition.text,
+    wednesdayWeatherIcon:
+      weatherData.forecast.forecastday[2].day.condition.icon,
+
+    thursdayMorningTempC: weatherData.forecast.forecastday[3].day.mintemp_c,
+    thursdayAfternoonTempC: weatherData.forecast.forecastday[3].day.maxtemp_c,
+    thursdayMorningTempF: weatherData.forecast.forecastday[3].day.mintemp_f,
+    thursdayAfternoonTempF: weatherData.forecast.forecastday[3].day.maxtemp_f,
+    thursdayWeatherCondition:
+      weatherData.forecast.forecastday[3].day.condition.text,
+    thursdayWeatherIcon: weatherData.forecast.forecastday[3].day.condition.icon,
+
+    fridayMorningTempC: weatherData.forecast.forecastday[4].day.mintemp_c,
+    fridayAfternoonTempC: weatherData.forecast.forecastday[4].day.maxtemp_c,
+    fridayMorningTempF: weatherData.forecast.forecastday[4].day.mintemp_f,
+    fridayAfternoonTempF: weatherData.forecast.forecastday[4].day.maxtemp_f,
+    fridayWeatherCondition:
+      weatherData.forecast.forecastday[4].day.condition.text,
+    fridayWeatherIcon: weatherData.forecast.forecastday[4].day.condition.icon,
+
+    saturdayMorningTempC: weatherData.forecast.forecastday[5].day.mintemp_c,
+    saturdayAfternoonTempC: weatherData.forecast.forecastday[5].day.maxtemp_c,
+    saturdayMorningTempF: weatherData.forecast.forecastday[5].day.mintemp_f,
+    saturdayAfternoonTempF: weatherData.forecast.forecastday[5].day.maxtemp_f,
+    saturdayWeatherCondition:
+      weatherData.forecast.forecastday[5].day.condition.text,
+    saturdayWeatherIcon: weatherData.forecast.forecastday[5].day.condition.icon,
+
+    sundayMorningTempC: weatherData.forecast.forecastday[6].day.mintemp_c,
+    sundayAfternoonTempC: weatherData.forecast.forecastday[6].day.maxtemp_c,
+    sundayMorningTempF: weatherData.forecast.forecastday[6].day.mintemp_f,
+    sundayAfternoonTempF: weatherData.forecast.forecastday[6].day.maxtemp_f,
+    sundayWeatherCondition:
+      weatherData.forecast.forecastday[6].day.condition.text,
+    sundayWeatherIcon: weatherData.forecast.forecastday[6].day.condition.icon,
+  };
+  console.log(forecastWeatherObj);
+  return forecastWeatherObj;
+}
+
 weatherForm.addEventListener("submit", async (e) => {
   const weatherData = await fetchUserLocation();
   console.log(weatherData);
   e.preventDefault();
   fetchUserLocation();
   processCurrentWeatherJSON(weatherData);
+  processFullWeekWeather(weatherData);
   displayCurrentWeather();
   weatherForm.reset();
 });
