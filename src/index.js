@@ -149,8 +149,37 @@ function processFullWeekWeather(weatherData) {
       weatherData.forecast.forecastday[6].day.condition.text,
     sundayWeatherIcon: weatherData.forecast.forecastday[6].day.condition.icon,
   };
-  console.log(forecastWeatherObj);
   return forecastWeatherObj;
+}
+
+function displayForecastWeather() {
+  mondayMorningTemp.textContent = `${forecastWeatherObj.mondayMorningTempC} C`;
+  mondayAfternoonTemp.textContent = `${forecastWeatherObj.mondayAfternoonTempC} C`;
+  mondayWeatherIcon.src = `${forecastWeatherObj.mondayWeatherIcon}`;
+
+  tuesdayMorningTemp.textContent = `${forecastWeatherObj.tuesdayMorningTempC} C`;
+  tuesdayAfternoonTemp.textContent = `${forecastWeatherObj.tuesdayAfternoonTempC} C`;
+  tuesdayWeatherIcon.src = `${forecastWeatherObj.tuesdayWeatherIcon}`;
+
+  wednesdayMorningTemp.textContent = `${forecastWeatherObj.wednesdayMorningTempC} C`;
+  wednesdayAfternoonTemp.textContent = `${forecastWeatherObj.wednesdayAfternoonTempC} C`;
+  wednesdayWeatherIcon.src = `${forecastWeatherObj.wednesdayWeatherIcon}`;
+
+  thursdayMorningTemp.textContent = `${forecastWeatherObj.thursdayMorningTempC} C`;
+  thursdayAfternoonTemp.textContent = `${forecastWeatherObj.thursdayAfternoonTempC} C`;
+  thursdayWeatherIcon.src = `${forecastWeatherObj.thursdayWeatherIcon}`;
+
+  fridayMorningTemp.textContent = `${forecastWeatherObj.fridayMorningTempC} C`;
+  fridayAfternoonTemp.textContent = `${forecastWeatherObj.fridayAfternoonTempC} C`;
+  fridayWeatherIcon.src = `${forecastWeatherObj.fridayWeatherIcon}`;
+
+  saturdayMorningTemp.textContent = `${forecastWeatherObj.saturdayMorningTempC} C`;
+  saturdayAfternoonTemp.textContent = `${forecastWeatherObj.saturdayAfternoonTempC} C`;
+  saturdayWeatherIcon.src = `${forecastWeatherObj.saturdayWeatherIcon}`;
+
+  sundayMorningTemp.textContent = `${forecastWeatherObj.sundayMorningTempC} C`;
+  sundayAfternoonTemp.textContent = `${forecastWeatherObj.sundayAfternoonTempC} C`;
+  sundayWeatherIcon.src = `${forecastWeatherObj.sundayWeatherIcon}`;
 }
 
 weatherForm.addEventListener("submit", async (e) => {
@@ -161,5 +190,6 @@ weatherForm.addEventListener("submit", async (e) => {
   processCurrentWeatherJSON(weatherData);
   processFullWeekWeather(weatherData);
   displayCurrentWeather();
+  displayForecastWeather();
   weatherForm.reset();
 });
