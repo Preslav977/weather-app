@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  flex: 1;
+  /* background-image: url("image/background.jpg"); */
+  /* background-repeat: no-repeat; */
+}
+
+.current-weather-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.full-week-weather {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.monday-container,
+.tuesday-container,
+.wednesday-container,
+.thursday-container,
+.friday-container,
+.saturday-container,
+.sunday-container {
+  text-align: center;
+  height: 100px;
+  width: 100px;
+}
+
+.feels-like,
+.humidity-sub-container,
+.chance-of-rain-sub-container,
+.wind-speed-sub-container {
+  padding-bottom: 20px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.thermometer {
+  margin-left: 8px;
+}
+
+.weather-condition {
+  font-size: 25px;
+}
+
+.city-name {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.local-time {
+  width: 50px;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.today-degrees {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.display-f {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.today-weather {
+  margin-left: -30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.today-weather-icon {
+  width: 140px;
+  height: 140px;
+}
+
+.temperature-container {
+  margin-left: -5px;
+}
+
+.humidity-text-container,
+.chance-of-rain-text-container,
+.wind-speed-text-container {
+  margin-left: 5px;
+}
+
+.monday,
+.tuesday,
+.wednesday,
+.thursday,
+.friday,
+.saturday,
+.sunday {
+  margin-bottom: 5px;
+}
+
+.monday-min-temp,
+.tuesday-min-temp,
+.wednesday-min-temp,
+.thursday-min-temp,
+.friday-min-temp,
+.saturday-min-temp,
+.sunday-min-temp {
+  margin-bottom: 3px;
+}
+
+.monday-max-temp,
+.tuesday-max-temp,
+.wednesday-max-temp,
+.thursday-max-temp,
+.friday-max-temp,
+.saturday-max-temp,
+.sunday-max-temp {
+  font-size: 12px;
+}
+
+.feels-like-container {
+  /* outline: 2px solid black; */
+  margin-bottom: 40px;
+}

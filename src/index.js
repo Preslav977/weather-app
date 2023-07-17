@@ -1,3 +1,5 @@
+import "./style.css";
+
 const weatherForm = document.querySelector(".weather-form");
 const searchingLocation = document.getElementById("searching-location");
 const toggleFromCtoF = document.getElementById("toggle-fahrenheit-celsius");
@@ -74,11 +76,24 @@ function processCurrentWeatherJSON(weatherData) {
   return currentWeatherObj;
 }
 
+function displayCurrentWeather() {
+  weatherCondition.textContent = `${currentWeatherObj.condition}`;
+  todayWeatherIcon.src = `${currentWeatherObj.todayWeatherIcon}`;
+  cityName.textContent = `${currentWeatherObj.city}`;
+  localTime.textContent = `${currentWeatherObj.time}`;
+  (currentDayDegrees.textContent = `${currentWeatherObj.degreesCelsius} C`),
+    (feelsLikeDegrees.textContent = `${currentWeatherObj.feelsLikeC} C`);
+  humidityPercent.textContent = `${currentWeatherObj.humidity} %`;
+  chanceOfRain.textContent = `${currentWeatherObj.chanceOfRain} %`;
+  windSpeed.textContent = `${currentWeatherObj.windSpeed} km/h`;
+}
+
 weatherForm.addEventListener("submit", async (e) => {
   const weatherData = await fetchUserLocation();
   console.log(weatherData);
   e.preventDefault();
   fetchUserLocation();
   processCurrentWeatherJSON(weatherData);
+  displayCurrentWeather();
   weatherForm.reset();
 });
