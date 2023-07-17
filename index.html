@@ -2,17 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Template Repository</title>
   <script src="main.js" type="module" defer></script>
+  <title>Weather</title>
 </head>
 <body>
-  <div class="form-container">
-    <form class="user-form" action="#">
-      <label for="search-location"></label>
-      <input type="text" name="search-location" id="search-location">
-    </form>
+  <div class="container">
+    <div class="current-weather-container">
+    <div class="current-weather">
+      <p class="weather-condition"></p>
+      <p class="city-name"></p>
+      <p class="local-time"></p>
+      <p class="today-degrees" ></p>
+      <div id="toggle-fahrenheit-celsius" class="display-f">Display F</div>
+      <div class="today-weather">
+        <img class="today-weather-icon" src="" alt="show the current weather">
+      </div>
+      <div class="form-container">
+        <form action="#" class="weather-form">
+        <label for="searching-location"></label>
+        <input type="text" name="searching-location" id="searching-location" placeholder="Search for city">
+      </form>
+      </div>
+    </div>
+    <div class="feels-like-container">
+      <div class="feels-like">
+        <img src="" alt="" class="thermometer">
+        <div class="temperature-container">
+        <p class="feels-like-text">Feels Like</p>
+        <p class="degrees"></p>
+        </div>
+      </div>
+        <div class="humidity-container">
+          <div class="humidity-sub-container">
+          <img src="" alt="" class="humidity">
+          <div class="humidity-text-container">
+          <p class="humidity-text">Humidity</p>
+          <p class="humidity-percent"></p>
+        </div>
+      </div>
+        <div class="chance-of-rain-container">
+          <div class="chance-of-rain-sub-container">
+          <img src="" alt="" class="chance-of-rain">
+          <div class="chance-of-rain-text-container">
+          <p class="chance-of-rain-text">Chance of Rain </p>
+          <p class="chance-of-rain-percent"></p>
+        </div>
+      </div>
+        <div class="wind-speed-container">
+          <div class="wind-speed-sub-container">
+          <img src="" alt="" class="wind-speed">
+          <div class="wind-speed-text-container">
+          <p class="wind-speed-text">Wind Speed</p>
+          <p class="wind-speed-kilometers"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+  <div class="full-week-weather">
+    <div class="monday-container">
+      <p class="monday">Monday</p>
+      <p class="monday-min-temp"></p>
+      <p class="monday-max-temp"></p>
+      <div class="monday-weather-icon-container">
+        <img class="monday-weather" src="" alt="show the weather for monday">
+      </div>
+      </div>
+      <div class="tuesday-container">
+        <p class="tuesday">Tuesday</p>
+        <p class="tuesday-min-temp"></p>
+        <p class="tuesday-max-temp" id="toggle-fahrenheit"></p>
+        <div class="tuesday-weather-icon-container">
+          <img class="tuesday-weather" src="" alt="show the weather for tuesday">
+        </div>
+        </div>  
+        <div class="wednesday-container">
+          <p class="wednesday">Wednesday</p>
+          <p class="wednesday-min-temp"></p>
+          <p class="wednesday-max-temp"></p>
+          <div class="wednesday-weather-icon-container">
+            <img class="wednesday-weather" src="" alt="show the weather for wednesday">
+          </div>
+          </div>  
+          <div class="thursday-container">
+            <p class="thursday">Thursday</p>
+            <p class="thursday-min-temp" ></p>
+              <p class="thursday-max-temp" ></p> 
+                <div class="thursday-weather-icon-container">
+                <img class="thursday-weather" src="" alt="show the weather for thursday">
+                </div>
+                </div>  
+                <div class="friday-container">
+                  <p class="friday">Friday</p>
+                  <p class="friday-min-temp"></p>
+                    <p class="friday-max-temp"></p> 
+                      <div class="friday-weather-icon-container">
+                        <img class="friday-weather" src="" alt="show the weather for friday">
+                      </div>
+                      </div>  
+                      <div class="saturday-container">
+                        <p class="saturday">Saturday</p>
+                        <p class="saturday-min-temp"></p>
+                        <p class="saturday-max-temp"></p>
+                        <div class="saturday-weather-icon-container">
+                          <img class="saturday-weather" src="" alt="show the weather for saturday">
+                        </div>
+                        </div>  
+                        <div class="sunday-container">
+                          <p class="sunday">Sunday</p>
+                          <p class="sunday-min-temp"></p>
+                          <p class="sunday-max-temp"></p>
+                          <div class="sunday-weather-icon-container">
+                            <img class="sunday-weather" src="" alt="show the weather for sunday">
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
