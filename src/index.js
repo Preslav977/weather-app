@@ -71,6 +71,37 @@ function retrieveWeatherLocationCity(searchingLocation) {
 
 let currentWeatherObj = {};
 
+async function displayCurrentWeatherLocation() {
+  const getIpData = await fetchUserLocationIP();
+  const weatherData = await retrieveWeatherLocationCity(getIpData.city);
+  currentWeatherObj = {
+    condition: weatherData.current.condition.text,
+    city: weatherData.location.name,
+    time: weatherData.location.localtime,
+    degreesCelsius: weatherData.current.temp_c,
+    degreesFahrenheit: weatherData.current.temp_f,
+    todayWeatherIcon: weatherData.current.condition.icon,
+    feelsLikeC: weatherData.current.feelslike_c,
+    feelsLikeF: weatherData.current.feelslike_f,
+    humidity: weatherData.current.humidity,
+    chanceOfRain: weatherData.forecast.forecastday[0].day.daily_chance_of_rain,
+    windSpeed: weatherData.current.wind_kph,
+    windSpeedMph: weatherData.current.wind_mph,
+  };
+
+  weatherCondition.textContent = `${currentWeatherObj.condition}`;
+  cityName.textContent = `${currentWeatherObj.city}`;
+  localTime.textContent = `${currentWeatherObj.time}`;
+  currentDayDegrees.textContent = `${currentWeatherObj.degreesCelsius} C`;
+  todayWeatherIcon.src = `${currentWeatherObj.todayWeatherIcon}`;
+  feelsLikeDegrees.textContent = `${currentWeatherObj.feelsLikeC} C`;
+  humidityPercent.textContent = `${currentWeatherObj.humidity} %`;
+  chanceOfRain.textContent = `${currentWeatherObj.chanceOfRain} %`;
+  windSpeed.textContent = `${currentWeatherObj.windSpeed} km/h`;
+}
+
+displayCurrentWeatherLocation();
+
 function processCurrentWeatherJSON(weatherData) {
   currentWeatherObj = {
     condition: weatherData.current.condition.text,
