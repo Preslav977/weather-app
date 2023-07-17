@@ -55,6 +55,20 @@ async function fetchUserLocation() {
   }
 }
 
+function fetchUserLocationIP() {
+  return fetch(
+    `https://api.weatherapi.com/v1/ip.json?key=e5de975d30ff49eeb9a70436231107&q=auto:ip`,
+    { mode: "cors" }
+  ).then((response) => response.json());
+}
+
+function retrieveWeatherLocationCity(searchingLocation) {
+  return fetch(
+    `https://api.weatherapi.com/v1/forecast.json?key=e5de975d30ff49eeb9a70436231107&q=${searchingLocation}&days=7`,
+    { mode: "cors" }
+  ).then((response) => response.json());
+}
+
 let currentWeatherObj = {};
 
 function processCurrentWeatherJSON(weatherData) {
