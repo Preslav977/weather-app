@@ -14,6 +14,8 @@ This is the current result of the Weather application, it was created with vanil
 
 Here is the link to the live preview of the project:
 
+https://preslav977.github.io/weather-app/
+
 ## 1.Objective
 
 First objective was to fetch the URL query using a function, and that will return a project and after promise was resolved another promise, to create JSON format data.
