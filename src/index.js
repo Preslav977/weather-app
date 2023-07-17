@@ -306,6 +306,80 @@ function displayForecastWeather() {
   sundayWeatherIcon.src = `${forecastWeatherObj.sundayWeatherIcon}`;
 }
 
+function toggleCtoF() {
+  if (
+    currentDayDegrees.textContent === `${currentWeatherObj.degreesCelsius} C` &&
+    feelsLikeDegrees.textContent === `${currentWeatherObj.feelsLikeC} C` &&
+    windSpeed.textContent === `${currentWeatherObj.windSpeed} km/h` &&
+    mondayMorningTemp.textContent ===
+      `${forecastWeatherObj.mondayMorningTempC} C` &&
+    mondayAfternoonTemp.textContent ===
+      `${forecastWeatherObj.mondayAfternoonTempC} C` &&
+    tuesdayMorningTemp.textContent ===
+      `${forecastWeatherObj.tuesdayMorningTempC} C` &&
+    tuesdayAfternoonTemp.textContent ===
+      `${forecastWeatherObj.tuesdayAfternoonTempC} C` &&
+    wednesdayMorningTemp.textContent ===
+      `${forecastWeatherObj.wednesdayMorningTempC} C` &&
+    wednesdayAfternoonTemp.textContent ===
+      `${forecastWeatherObj.wednesdayAfternoonTempC} C` &&
+    thursdayMorningTemp.textContent ===
+      `${forecastWeatherObj.thursdayMorningTempC} C` &&
+    thursdayAfternoonTemp.textContent ===
+      `${forecastWeatherObj.thursdayAfternoonTempC} C` &&
+    fridayMorningTemp.textContent ===
+      `${forecastWeatherObj.fridayMorningTempC} C` &&
+    fridayAfternoonTemp.textContent ===
+      `${forecastWeatherObj.fridayAfternoonTempC} C` &&
+    saturdayMorningTemp.textContent ===
+      `${forecastWeatherObj.saturdayMorningTempC} C` &&
+    saturdayAfternoonTemp.textContent ===
+      `${forecastWeatherObj.saturdayAfternoonTempC} C` &&
+    sundayMorningTemp.textContent ===
+      `${forecastWeatherObj.sundayMorningTempC} C` &&
+    sundayAfternoonTemp.textContent ===
+      `${forecastWeatherObj.sundayAfternoonTempC} C`
+  ) {
+    currentDayDegrees.textContent = `${currentWeatherObj.degreesFahrenheit} F`;
+    feelsLikeDegrees.textContent = `${currentWeatherObj.feelsLikeF} F`;
+    windSpeed.textContent = `${currentWeatherObj.windSpeedMph} mph`;
+    mondayMorningTemp.textContent = `${forecastWeatherObj.mondayMorningTempF} F`;
+    mondayAfternoonTemp.textContent = `${forecastWeatherObj.mondayAfternoonTempF} F`;
+    tuesdayMorningTemp.textContent = `${forecastWeatherObj.tuesdayMorningTempF} F`;
+    tuesdayAfternoonTemp.textContent = `${forecastWeatherObj.tuesdayAfternoonTempF} F`;
+    wednesdayMorningTemp.textContent = `${forecastWeatherObj.wednesdayMorningTempF} F`;
+    wednesdayAfternoonTemp.textContent = `${forecastWeatherObj.wednesdayAfternoonTempF} F`;
+    thursdayMorningTemp.textContent = `${forecastWeatherObj.thursdayMorningTempF} F`;
+    thursdayAfternoonTemp.textContent = `${forecastWeatherObj.thursdayAfternoonTempF} F`;
+    fridayMorningTemp.textContent = `${forecastWeatherObj.fridayMorningTempF} F`;
+    fridayAfternoonTemp.textContent = `${forecastWeatherObj.fridayAfternoonTempF} F`;
+    saturdayMorningTemp.textContent = `${forecastWeatherObj.saturdayMorningTempF} F`;
+    saturdayAfternoonTemp.textContent = `${forecastWeatherObj.saturdayAfternoonTempF} F`;
+    sundayMorningTemp.textContent = `${forecastWeatherObj.sundayMorningTempF} F`;
+    sundayAfternoonTemp.textContent = `${forecastWeatherObj.sundayAfternoonTempF} F`;
+  } else {
+    currentDayDegrees.textContent = `${currentWeatherObj.degreesCelsius} C`;
+    feelsLikeDegrees.textContent = `${currentWeatherObj.feelsLikeC} C`;
+    windSpeed.textContent = `${currentWeatherObj.windSpeed} km/h`;
+    mondayMorningTemp.textContent = `${forecastWeatherObj.mondayMorningTempC} C`;
+    mondayAfternoonTemp.textContent = `${forecastWeatherObj.mondayAfternoonTempC} C`;
+    tuesdayMorningTemp.textContent = `${forecastWeatherObj.tuesdayMorningTempC} C`;
+    tuesdayAfternoonTemp.textContent = `${forecastWeatherObj.tuesdayAfternoonTempC} C`;
+    wednesdayMorningTemp.textContent = `${forecastWeatherObj.wednesdayMorningTempC} C`;
+    wednesdayAfternoonTemp.textContent = `${forecastWeatherObj.wednesdayAfternoonTempC} C`;
+    thursdayMorningTemp.textContent = `${forecastWeatherObj.thursdayMorningTempC} C`;
+    thursdayAfternoonTemp.textContent = `${forecastWeatherObj.thursdayAfternoonTempC} C`;
+    fridayMorningTemp.textContent = `${forecastWeatherObj.fridayMorningTempC} C`;
+    fridayAfternoonTemp.textContent = `${forecastWeatherObj.fridayAfternoonTempC} C`;
+    saturdayMorningTemp.textContent = `${forecastWeatherObj.saturdayMorningTempC} C`;
+    saturdayAfternoonTemp.textContent = `${forecastWeatherObj.saturdayAfternoonTempC} C`;
+    sundayMorningTemp.textContent = `${forecastWeatherObj.sundayMorningTempC} C`;
+    sundayAfternoonTemp.textContent = `${forecastWeatherObj.sundayAfternoonTempC} C`;
+  }
+}
+
+toggleFromCtoF.addEventListener("click", toggleCtoF);
+
 weatherForm.addEventListener("submit", async (e) => {
   const weatherData = await fetchUserLocation();
   console.log(weatherData);
