@@ -71,6 +71,10 @@ function retrieveWeatherLocationCity(searchingLocation) {
 
 let currentWeatherObj = {};
 
+// TODO: separate this function, in two functions
+// the first one would process the data
+// the second would display the current weather
+
 async function displayCurrentWeatherLocation() {
   const getIpData = await fetchUserLocationIP();
   const weatherData = await retrieveWeatherLocationCity(getIpData.city);
@@ -117,20 +121,7 @@ function processCurrentWeatherJSON(weatherData) {
     windSpeed: weatherData.current.wind_kph,
     windSpeedMph: weatherData.current.wind_mph,
   };
-  console.log(currentWeatherObj);
   return currentWeatherObj;
-}
-
-function displayCurrentWeather() {
-  weatherCondition.textContent = `${currentWeatherObj.condition}`;
-  todayWeatherIcon.src = `${currentWeatherObj.todayWeatherIcon}`;
-  cityName.textContent = `${currentWeatherObj.city}`;
-  localTime.textContent = `${currentWeatherObj.time}`;
-  (currentDayDegrees.textContent = `${currentWeatherObj.degreesCelsius} C`),
-    (feelsLikeDegrees.textContent = `${currentWeatherObj.feelsLikeC} C`);
-  humidityPercent.textContent = `${currentWeatherObj.humidity} %`;
-  chanceOfRain.textContent = `${currentWeatherObj.chanceOfRain} %`;
-  windSpeed.textContent = `${currentWeatherObj.windSpeed} km/h`;
 }
 
 let forecastWeatherObj = {};
@@ -196,6 +187,52 @@ function processFullWeekWeather(weatherData) {
   };
   return forecastWeatherObj;
 }
+
+function displayCurrentWeather() {
+  weatherCondition.textContent = `${currentWeatherObj.condition}`;
+  todayWeatherIcon.src = `${currentWeatherObj.todayWeatherIcon}`;
+  cityName.textContent = `${currentWeatherObj.city}`;
+  localTime.textContent = `${currentWeatherObj.time}`;
+  (currentDayDegrees.textContent = `${currentWeatherObj.degreesCelsius} C`),
+    (feelsLikeDegrees.textContent = `${currentWeatherObj.feelsLikeC} C`);
+  humidityPercent.textContent = `${currentWeatherObj.humidity} %`;
+  chanceOfRain.textContent = `${currentWeatherObj.chanceOfRain} %`;
+  windSpeed.textContent = `${currentWeatherObj.windSpeed} km/h`;
+}
+
+function displayForecastWeather() {
+  mondayMorningTemp.textContent = `${forecastWeatherObj.mondayMorningTempC} C`;
+  mondayAfternoonTemp.textContent = `${forecastWeatherObj.mondayAfternoonTempC} C`;
+  mondayWeatherIcon.src = `${forecastWeatherObj.mondayWeatherIcon}`;
+
+  tuesdayMorningTemp.textContent = `${forecastWeatherObj.tuesdayMorningTempC} C`;
+  tuesdayAfternoonTemp.textContent = `${forecastWeatherObj.tuesdayAfternoonTempC} C`;
+  tuesdayWeatherIcon.src = `${forecastWeatherObj.tuesdayWeatherIcon}`;
+
+  wednesdayMorningTemp.textContent = `${forecastWeatherObj.wednesdayMorningTempC} C`;
+  wednesdayAfternoonTemp.textContent = `${forecastWeatherObj.wednesdayAfternoonTempC} C`;
+  wednesdayWeatherIcon.src = `${forecastWeatherObj.wednesdayWeatherIcon}`;
+
+  thursdayMorningTemp.textContent = `${forecastWeatherObj.thursdayMorningTempC} C`;
+  thursdayAfternoonTemp.textContent = `${forecastWeatherObj.thursdayAfternoonTempC} C`;
+  thursdayWeatherIcon.src = `${forecastWeatherObj.thursdayWeatherIcon}`;
+
+  fridayMorningTemp.textContent = `${forecastWeatherObj.fridayMorningTempC} C`;
+  fridayAfternoonTemp.textContent = `${forecastWeatherObj.fridayAfternoonTempC} C`;
+  fridayWeatherIcon.src = `${forecastWeatherObj.fridayWeatherIcon}`;
+
+  saturdayMorningTemp.textContent = `${forecastWeatherObj.saturdayMorningTempC} C`;
+  saturdayAfternoonTemp.textContent = `${forecastWeatherObj.saturdayAfternoonTempC} C`;
+  saturdayWeatherIcon.src = `${forecastWeatherObj.saturdayWeatherIcon}`;
+
+  sundayMorningTemp.textContent = `${forecastWeatherObj.sundayMorningTempC} C`;
+  sundayAfternoonTemp.textContent = `${forecastWeatherObj.sundayAfternoonTempC} C`;
+  sundayWeatherIcon.src = `${forecastWeatherObj.sundayWeatherIcon}`;
+}
+
+// TODO: separate this function, in two functions
+// the first one would process the data
+// the second would display the current weather
 
 async function displayForecastWeatherLocation() {
   const getIpData = await fetchUserLocationIP();
@@ -276,36 +313,6 @@ async function displayForecastWeatherLocation() {
 
 displayForecastWeatherLocation();
 
-function displayForecastWeather() {
-  mondayMorningTemp.textContent = `${forecastWeatherObj.mondayMorningTempC} C`;
-  mondayAfternoonTemp.textContent = `${forecastWeatherObj.mondayAfternoonTempC} C`;
-  mondayWeatherIcon.src = `${forecastWeatherObj.mondayWeatherIcon}`;
-
-  tuesdayMorningTemp.textContent = `${forecastWeatherObj.tuesdayMorningTempC} C`;
-  tuesdayAfternoonTemp.textContent = `${forecastWeatherObj.tuesdayAfternoonTempC} C`;
-  tuesdayWeatherIcon.src = `${forecastWeatherObj.tuesdayWeatherIcon}`;
-
-  wednesdayMorningTemp.textContent = `${forecastWeatherObj.wednesdayMorningTempC} C`;
-  wednesdayAfternoonTemp.textContent = `${forecastWeatherObj.wednesdayAfternoonTempC} C`;
-  wednesdayWeatherIcon.src = `${forecastWeatherObj.wednesdayWeatherIcon}`;
-
-  thursdayMorningTemp.textContent = `${forecastWeatherObj.thursdayMorningTempC} C`;
-  thursdayAfternoonTemp.textContent = `${forecastWeatherObj.thursdayAfternoonTempC} C`;
-  thursdayWeatherIcon.src = `${forecastWeatherObj.thursdayWeatherIcon}`;
-
-  fridayMorningTemp.textContent = `${forecastWeatherObj.fridayMorningTempC} C`;
-  fridayAfternoonTemp.textContent = `${forecastWeatherObj.fridayAfternoonTempC} C`;
-  fridayWeatherIcon.src = `${forecastWeatherObj.fridayWeatherIcon}`;
-
-  saturdayMorningTemp.textContent = `${forecastWeatherObj.saturdayMorningTempC} C`;
-  saturdayAfternoonTemp.textContent = `${forecastWeatherObj.saturdayAfternoonTempC} C`;
-  saturdayWeatherIcon.src = `${forecastWeatherObj.saturdayWeatherIcon}`;
-
-  sundayMorningTemp.textContent = `${forecastWeatherObj.sundayMorningTempC} C`;
-  sundayAfternoonTemp.textContent = `${forecastWeatherObj.sundayAfternoonTempC} C`;
-  sundayWeatherIcon.src = `${forecastWeatherObj.sundayWeatherIcon}`;
-}
-
 function toggleCtoF() {
   if (
     currentDayDegrees.textContent === `${currentWeatherObj.degreesCelsius} C` &&
@@ -381,10 +388,8 @@ function toggleCtoF() {
 toggleFromCtoF.addEventListener("click", toggleCtoF);
 
 weatherForm.addEventListener("submit", async (e) => {
-  const weatherData = await fetchUserLocation();
-  console.log(weatherData);
   e.preventDefault();
-  fetchUserLocation();
+  const weatherData = await fetchUserLocation();
   processCurrentWeatherJSON(weatherData);
   processFullWeekWeather(weatherData);
   displayCurrentWeather();
