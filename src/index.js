@@ -26,22 +26,6 @@ const tuesdayWeatherIcon = document.querySelector(".tuesday-weather");
 const wednesdayMorningTemp = document.querySelector(".wednesday-min-temp");
 const wednesdayAfternoonTemp = document.querySelector(".wednesday-max-temp");
 const wednesdayWeatherIcon = document.querySelector(".wednesday-weather");
-// thursday
-// const thursdayMorningTemp = document.querySelector(".thursday-min-temp");
-// const thursdayAfternoonTemp = document.querySelector(".thursday-max-temp");
-// const thursdayWeatherIcon = document.querySelector(".thursday-weather");
-// friday
-// const fridayMorningTemp = document.querySelector(".friday-min-temp");
-// const fridayAfternoonTemp = document.querySelector(".friday-max-temp");
-// const fridayWeatherIcon = document.querySelector(".friday-weather");
-// saturday
-// const saturdayMorningTemp = document.querySelector(".saturday-min-temp");
-// const saturdayAfternoonTemp = document.querySelector(".saturday-max-temp");
-// const saturdayWeatherIcon = document.querySelector(".saturday-weather");
-// sunday
-// const sundayMorningTemp = document.querySelector(".sunday-min-temp");
-// const sundayAfternoonTemp = document.querySelector(".sunday-max-temp");
-// const sundayWeatherIcon = document.querySelector(".sunday-weather");
 
 async function fetchUserLocation() {
   try {
@@ -152,38 +136,6 @@ function processFullWeekWeather(weatherData) {
       weatherData.forecast.forecastday[2].day.condition.text,
     wednesdayWeatherIcon:
       weatherData.forecast.forecastday[2].day.condition.icon,
-
-    // thursdayMorningTempC: weatherData.forecast.forecastday[3].day.mintemp_c,
-    // thursdayAfternoonTempC: weatherData.forecast.forecastday[3].day.maxtemp_c,
-    // thursdayMorningTempF: weatherData.forecast.forecastday[3].day.mintemp_f,
-    // thursdayAfternoonTempF: weatherData.forecast.forecastday[3].day.maxtemp_f,
-    // thursdayWeatherCondition:
-    //   weatherData.forecast.forecastday[3].day.condition.text,
-    // thursdayWeatherIcon: weatherData.forecast.forecastday[3].day.condition.icon,
-
-    // fridayMorningTempC: weatherData.forecast.forecastday[4].day.mintemp_c,
-    // fridayAfternoonTempC: weatherData.forecast.forecastday[4].day.maxtemp_c,
-    // fridayMorningTempF: weatherData.forecast.forecastday[4].day.mintemp_f,
-    // fridayAfternoonTempF: weatherData.forecast.forecastday[4].day.maxtemp_f,
-    // fridayWeatherCondition:
-    //   weatherData.forecast.forecastday[4].day.condition.text,
-    // fridayWeatherIcon: weatherData.forecast.forecastday[4].day.condition.icon,
-
-    // saturdayMorningTempC: weatherData.forecast.forecastday[5].day.mintemp_c,
-    // saturdayAfternoonTempC: weatherData.forecast.forecastday[5].day.maxtemp_c,
-    // saturdayMorningTempF: weatherData.forecast.forecastday[5].day.mintemp_f,
-    // saturdayAfternoonTempF: weatherData.forecast.forecastday[5].day.maxtemp_f,
-    // saturdayWeatherCondition:
-    //   weatherData.forecast.forecastday[5].day.condition.text,
-    // saturdayWeatherIcon: weatherData.forecast.forecastday[5].day.condition.icon,
-
-    // sundayMorningTempC: weatherData.forecast.forecastday[6].day.mintemp_c,
-    // sundayAfternoonTempC: weatherData.forecast.forecastday[6].day.maxtemp_c,
-    // sundayMorningTempF: weatherData.forecast.forecastday[6].day.mintemp_f,
-    // sundayAfternoonTempF: weatherData.forecast.forecastday[6].day.maxtemp_f,
-    // sundayWeatherCondition:
-    //   weatherData.forecast.forecastday[6].day.condition.text,
-    // sundayWeatherIcon: weatherData.forecast.forecastday[6].day.condition.icon,
   };
   return forecastWeatherObj;
 }
@@ -212,22 +164,6 @@ function displayForecastWeather() {
   wednesdayMorningTemp.textContent = `${forecastWeatherObj.wednesdayMorningTempC} C`;
   wednesdayAfternoonTemp.textContent = `${forecastWeatherObj.wednesdayAfternoonTempC} C`;
   wednesdayWeatherIcon.src = `${forecastWeatherObj.wednesdayWeatherIcon}`;
-
-  //   thursdayMorningTemp.textContent = `${forecastWeatherObj.thursdayMorningTempC} C`;
-  // thursdayAfternoonTemp.textContent = `${forecastWeatherObj.thursdayAfternoonTempC} C`;
-  //   thursdayWeatherIcon.src = `${forecastWeatherObj.thursdayWeatherIcon}`;
-
-  //   fridayMorningTemp.textContent = `${forecastWeatherObj.fridayMorningTempC} C`;
-  //   fridayAfternoonTemp.textContent = `${forecastWeatherObj.fridayAfternoonTempC} C`;
-  //   fridayWeatherIcon.src = `${forecastWeatherObj.fridayWeatherIcon}`;
-
-  //   saturdayMorningTemp.textContent = `${forecastWeatherObj.saturdayMorningTempC} C`;
-  // saturdayAfternoonTemp.textContent = `${forecastWeatherObj.saturdayAfternoonTempC} C`;
-  //   saturdayWeatherIcon.src = `${forecastWeatherObj.saturdayWeatherIcon}`;
-
-  //   sundayMorningTemp.textContent = `${forecastWeatherObj.sundayMorningTempC} C`;
-  //   sundayAfternoonTemp.textContent = `${forecastWeatherObj.sundayAfternoonTempC} C`;
-  //   sundayWeatherIcon.src = `${forecastWeatherObj.sundayWeatherIcon}`;
 }
 
 // TODO: separate this function, in two functions
@@ -256,30 +192,6 @@ async function displayForecastWeatherLocation() {
     wednesdayAfternoonTempF: weatherData.forecast.forecastday[2].day.maxtemp_f,
     wednesdayWeatherIcon:
       weatherData.forecast.forecastday[2].day.condition.icon,
-
-    // thursdayMorningTempC: weatherData.forecast.forecastday[3].day.mintemp_c,
-    // thursdayAfternoonTempC: weatherData.forecast.forecastday[3].day.maxtemp_c,
-    // thursdayMorningTempF: weatherData.forecast.forecastday[3].day.mintemp_f,
-    // thursdayAfternoonTempF: weatherData.forecast.forecastday[3].day.maxtemp_f,
-    // thursdayWeatherIcon: weatherData.forecast.forecastday[3].day.condition.icon,
-
-    // fridayMorningTempC: weatherData.forecast.forecastday[4].day.mintemp_c,
-    // fridayAfternoonTempC: weatherData.forecast.forecastday[4].day.maxtemp_c,
-    // fridayMorningTempF: weatherData.forecast.forecastday[4].day.mintemp_f,
-    // fridayAfternoonTempF: weatherData.forecast.forecastday[4].day.maxtemp_f,
-    // fridayWeatherIcon: weatherData.forecast.forecastday[4].day.condition.icon,
-
-    // saturdayMorningTempC: weatherData.forecast.forecastday[5].day.mintemp_c,
-    // saturdayAfternoonTempC: weatherData.forecast.forecastday[5].day.maxtemp_c,
-    // saturdayMorningTempF: weatherData.forecast.forecastday[5].day.mintemp_f,
-    // saturdayAfternoonTempF: weatherData.forecast.forecastday[5].day.maxtemp_f,
-    // saturdayWeatherIcon: weatherData.forecast.forecastday[5].day.condition.icon,
-
-    // sundayMorningTempC: weatherData.forecast.forecastday[6].day.mintemp_c,
-    // sundayAfternoonTempC: weatherData.forecast.forecastday[6].day.maxtemp_c,
-    // sundayMorningTempF: weatherData.forecast.forecastday[6].day.mintemp_f,
-    // sundayAfternoonTempF: weatherData.forecast.forecastday[6].day.maxtemp_f,
-    // sundayWeatherIcon: weatherData.forecast.forecastday[6].day.condition.icon,
   };
 
   mondayMorningTemp.textContent = `${forecastWeatherObj.mondayMorningTempC} C`;
@@ -293,22 +205,6 @@ async function displayForecastWeatherLocation() {
   wednesdayMorningTemp.textContent = `${forecastWeatherObj.wednesdayMorningTempC} C`;
   wednesdayAfternoonTemp.textContent = `${forecastWeatherObj.wednesdayAfternoonTempC} C`;
   wednesdayWeatherIcon.src = `${forecastWeatherObj.wednesdayWeatherIcon}`;
-
-  //   thursdayMorningTemp.textContent = `${forecastWeatherObj.thursdayMorningTempC} C`;
-  // thursdayAfternoonTemp.textContent = `${forecastWeatherObj.thursdayAfternoonTempC} C`;
-  //   thursdayWeatherIcon.src = `${forecastWeatherObj.thursdayWeatherIcon}`;
-
-  //   fridayMorningTemp.textContent = `${forecastWeatherObj.fridayMorningTempC} C`;
-  //   fridayAfternoonTemp.textContent = `${forecastWeatherObj.fridayAfternoonTempC} C`;
-  //   fridayWeatherIcon.src = `${forecastWeatherObj.fridayWeatherIcon}`;
-
-  //   saturdayMorningTemp.textContent = `${forecastWeatherObj.saturdayMorningTempC} C`;
-  // saturdayAfternoonTemp.textContent = `${forecastWeatherObj.saturdayAfternoonTempC} C`;
-  //   saturdayWeatherIcon.src = `${forecastWeatherObj.saturdayWeatherIcon}`;
-
-  //   sundayMorningTemp.textContent = `${forecastWeatherObj.sundayMorningTempC} C`;
-  //   sundayAfternoonTemp.textContent = `${forecastWeatherObj.sundayAfternoonTempC} C`;
-  //   sundayWeatherIcon.src = `${forecastWeatherObj.sundayWeatherIcon}`;
 }
 
 displayForecastWeatherLocation();
@@ -330,22 +226,6 @@ function toggleCtoF() {
       `${forecastWeatherObj.wednesdayMorningTempC} C` &&
     wednesdayAfternoonTemp.textContent ===
       `${forecastWeatherObj.wednesdayAfternoonTempC} C`
-    // thursdayMorningTemp.textContent ===
-    //   `${forecastWeatherObj.thursdayMorningTempC} C` &&
-    // thursdayAfternoonTemp.textContent ===
-    //   `${forecastWeatherObj.thursdayAfternoonTempC} C` &&
-    // fridayMorningTemp.textContent ===
-    //   `${forecastWeatherObj.fridayMorningTempC} C` &&
-    // fridayAfternoonTemp.textContent ===
-    //   `${forecastWeatherObj.fridayAfternoonTempC} C` &&
-    // saturdayMorningTemp.textContent ===
-    //   `${forecastWeatherObj.saturdayMorningTempC} C` &&
-    // saturdayAfternoonTemp.textContent ===
-    //   `${forecastWeatherObj.saturdayAfternoonTempC} C` &&
-    // sundayMorningTemp.textContent ===
-    //   `${forecastWeatherObj.sundayMorningTempC} C` &&
-    // sundayAfternoonTemp.textContent ===
-    //   `${forecastWeatherObj.sundayAfternoonTempC} C`
   ) {
     currentDayDegrees.textContent = `${currentWeatherObj.degreesFahrenheit} F`;
     feelsLikeDegrees.textContent = `${currentWeatherObj.feelsLikeF} F`;
@@ -355,18 +235,6 @@ function toggleCtoF() {
     tuesdayMorningTemp.textContent = `${forecastWeatherObj.tuesdayMorningTempF} F`;
     tuesdayAfternoonTemp.textContent = `${forecastWeatherObj.tuesdayAfternoonTempF} F`;
     wednesdayMorningTemp.textContent = `${forecastWeatherObj.wednesdayMorningTempF} F`;
-    // wednesdayAfternoonTemp.textContent
-    //= `${forecastWeatherObj.wednesdayAfternoonTempF} F`;
-    // thursdayMorningTemp.textContent = `${forecastWeatherObj.thursdayMorningTempF} F`;
-    // thursdayAfternoonTemp.textContent
-    //= `${forecastWeatherObj.thursdayAfternoonTempF} F`;
-    // fridayMorningTemp.textContent = `${forecastWeatherObj.fridayMorningTempF} F`;
-    // fridayAfternoonTemp.textContent = `${forecastWeatherObj.fridayAfternoonTempF} F`;
-    // saturdayMorningTemp.textContent = `${forecastWeatherObj.saturdayMorningTempF} F`;
-    // saturdayAfternoonTemp.textContent
-    //= `${forecastWeatherObj.saturdayAfternoonTempF} F`;
-    // sundayMorningTemp.textContent = `${forecastWeatherObj.sundayMorningTempF} F`;
-    // sundayAfternoonTemp.textContent = `${forecastWeatherObj.sundayAfternoonTempF} F`;
   } else {
     currentDayDegrees.textContent = `${currentWeatherObj.degreesCelsius} C`;
     feelsLikeDegrees.textContent = `${currentWeatherObj.feelsLikeC} C`;
@@ -376,18 +244,6 @@ function toggleCtoF() {
     tuesdayMorningTemp.textContent = `${forecastWeatherObj.tuesdayMorningTempC} C`;
     tuesdayAfternoonTemp.textContent = `${forecastWeatherObj.tuesdayAfternoonTempC} C`;
     wednesdayMorningTemp.textContent = `${forecastWeatherObj.wednesdayMorningTempC} C`;
-    // wednesdayAfternoonTemp.textContent
-    //= `${forecastWeatherObj.wednesdayAfternoonTempC} C`;
-    // thursdayMorningTemp.textContent = `${forecastWeatherObj.thursdayMorningTempC} C`;
-    // thursdayAfternoonTemp.textContent
-    // = `${forecastWeatherObj.thursdayAfternoonTempC} C`;
-    // fridayMorningTemp.textContent = `${forecastWeatherObj.fridayMorningTempC} C`;
-    // fridayAfternoonTemp.textContent = `${forecastWeatherObj.fridayAfternoonTempC} C`;
-    // saturdayMorningTemp.textContent = `${forecastWeatherObj.saturdayMorningTempC} C`;
-    // saturdayAfternoonTemp.textContent
-    //= `${forecastWeatherObj.saturdayAfternoonTempC} C`;
-    // sundayMorningTemp.textContent = `${forecastWeatherObj.sundayMorningTempC} C`;
-    // sundayAfternoonTemp.textContent = `${forecastWeatherObj.sundayAfternoonTempC} C`;
   }
 }
 
