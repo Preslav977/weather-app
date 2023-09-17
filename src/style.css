@@ -9,7 +9,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
   flex: 1;
-  background-image: url("background/background.jpg");
+  background-image: url("background/black-clouds-field.jpg");
+  object-fit: none;
   background-repeat: no-repeat;
 }
 
